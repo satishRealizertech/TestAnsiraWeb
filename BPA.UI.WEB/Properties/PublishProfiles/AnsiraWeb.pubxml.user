@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Vitthal\AnsiraDeployment\AnsiraWeb</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/BPA.UI.WEB.dll">
+      <publishTime>08/07/2018 20:36:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 15:23:58</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="Content/font-awesome.css">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="Content/loading.css">
+      <publishTime>12/08/2017 09:20:50</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>08/04/2018 16:11:56</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/04/2018 11:51:56</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/04/2018 16:11:57</publishTime>
+    </File>
+    <File Include="script/backbone.js">
+      <publishTime>08/08/2018 18:43:03</publishTime>
+    </File>
+    <File Include="script/backboneIdentifier.js">
+      <publishTime>08/08/2018 19:43:26</publishTime>
+    </File>
+    <File Include="script/backbonepageelement.js">
+      <publishTime>08/08/2018 19:43:32</publishTime>
+    </File>
+    <File Include="script/backbonepageelementidentifier.js">
+      <publishTime>08/10/2018 12:27:57</publishTime>
+    </File>
+    <File Include="script/backbonepageidentifier.js">
+      <publishTime>08/08/2018 19:43:42</publishTime>
+    </File>
+    <File Include="script/backbonepagetype.js">
+      <publishTime>08/08/2018 19:43:48</publishTime>
+    </File>
+    <File Include="script/dataelement.js">
+      <publishTime>08/08/2018 19:43:57</publishTime>
+    </File>
+    <File Include="script/dealer.js">
+      <publishTime>08/08/2018 19:44:03</publishTime>
+    </File>
+    <File Include="script/loading.js">
+      <publishTime>08/07/2018 18:33:08</publishTime>
+    </File>
+    <File Include="script/oem.js">
+      <publishTime>08/08/2018 19:44:09</publishTime>
+    </File>
+    <File Include="script/pageanalysiselement.js">
+      <publishTime>08/08/2018 19:44:22</publishTime>
+    </File>
+    <File Include="script/pagetype.js">
+      <publishTime>08/10/2018 10:27:43</publishTime>
+    </File>
+    <File Include="Views/Ansira/HomePage.cshtml">
+      <publishTime>08/07/2018 17:49:38</publishTime>
+    </File>
+    <File Include="Views/Ansira/index.cshtml">
+      <publishTime>08/07/2018 20:03:26</publishTime>
+    </File>
+    <File Include="Views/Backbone/BackboneIdentifier.cshtml">
+      <publishTime>08/08/2018 16:53:46</publishTime>
+    </File>
+    <File Include="Views/Backbone/Index.cshtml">
+      <publishTime>08/08/2018 16:53:11</publishTime>
+    </File>
+    <File Include="Views/BackbonePageElement/Index.cshtml">
+      <publishTime>08/08/2018 15:57:55</publishTime>
+    </File>
+    <File Include="Views/BackbonePageElementIdentifier/Index.cshtml">
+      <publishTime>08/10/2018 12:22:14</publishTime>
+    </File>
+    <File Include="Views/BackbonePageIdentifier/Index.cshtml">
+      <publishTime>08/08/2018 15:42:59</publishTime>
+    </File>
+    <File Include="Views/DataElement/Index.cshtml">
+      <publishTime>08/08/2018 16:54:35</publishTime>
+    </File>
+    <File Include="Views/Dealer/Index.cshtml">
+      <publishTime>08/08/2018 15:43:45</publishTime>
+    </File>
+    <File Include="Views/OEM/Index.cshtml">
+      <publishTime>08/08/2018 15:43:50</publishTime>
+    </File>
+    <File Include="Views/PageType/BackbonePage.cshtml">
+      <publishTime>08/08/2018 16:52:21</publishTime>
+    </File>
+    <File Include="Views/PageType/PageAnalysisPageElement.cshtml">
+      <publishTime>08/08/2018 18:07:07</publishTime>
+    </File>
+    <File Include="Views/PageType/PageType.cshtml">
+      <publishTime>08/08/2018 16:54:37</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>08/04/2018 11:51:56</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/07/2018 20:36:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

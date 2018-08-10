@@ -1,0 +1,119 @@
+﻿
+@{
+    Layout = "~/Views/Ansira/index.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/script/oem.js"></script>
+    <title>Index</title>
+</head>
+<body>
+    @*<div class="container">
+            <h2>OEM Details</h2>
+            <table id="OEMData" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>*@
+
+
+    <div class="row">
+        <h2 class="text-center">OEMs</h2>
+        <button class="btn btn-primary" data-title="Create" data-toggle="modal" data-target="#create"><span>Create OEM</span></button>
+    </div>
+    <div class="row" style="margin-top:10px;">
+        <div class="col-md-12">
+            <table id="OEMdatatable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="create" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title custom_align" id="Heading">Create OEM Data</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" id="txt_OEM_Name" type="text" placeholder="OEM name" />
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" onclick="CreateOEMData()" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Create</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input class="form-control" id="txt_OEM_Name_Update" type="text" placeholder="OEM Name" />
+                    </div>
+                    <div>
+                        <span id="label_oemID" hidden></span>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" onclick="UpdateOEMData()" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                </div>
+                <div class="modal-body">
+                    <span id="label_oemID_Delete" hidden></span>
+                    <div class="alert alert-danger" id="txt_OEM_Name_Delete"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" onclick="DeleteOEMData()" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                    <button type="button"  class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                </div>
+
+
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</body>
+</html>

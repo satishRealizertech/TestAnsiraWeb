@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Action("HomePage", "Ansira")">Anisra</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index", "OEM")">OEM</a></li>
+                    <li><a href="@Url.Action("Index", "Dealer")">Dealer</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page Type<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("PageType", "PageType")">Page Type</a></li>
+                            <li><a href="@Url.Action("BackbonePage", "PageType")">Backbone Page</a></li>
+                            <li><a href="@Url.Action("Index", "BackbonePageIdentifier")">Backbone Page Identifier</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Backbone<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Backbone")">Backbone</a></li>
+                            <li><a href="@Url.Action("BackboneIdentifier", "Backbone")">Backbone Identifier</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Data Element<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "DataElement")">Data Element</a></li>
+                            <li><a href="@Url.Action("Index", "BackbonePageElement")">Backbone Page Element</a></li>
+                            <li><a href="@Url.Action("Index", "BackbonePageElementIdentifier")">Backbone Page Element Identifier</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="@Url.Action("PageAnalysisPageElement", "PageType")">Page Type Analysis</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
