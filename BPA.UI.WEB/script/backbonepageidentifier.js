@@ -4,7 +4,13 @@
     setPageIdentifierData();
     getBackbonePageData();
 });
-
+function getTodaysDate() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
+}
 var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
 function getDataElementData() {
     $.ajax({
@@ -93,7 +99,8 @@ function CreateBackbonePageElementData() {
         Type: $('#txt_PageIdentifier_Type').val(),
         Identifier: $('#txt_PageIdentifier').val(),
         SerialNo: $('#txt_PageIdentifier_SerialNo').val(),
-        Value: $('#txt_PageIdentifier_Value').val()
+        Value: $('#txt_PageIdentifier_Value').val(),
+        CreateTs: getTodaysDate()
     };
     $.ajax({
         type: "POST",
@@ -111,9 +118,13 @@ function CreateBackbonePageElementData() {
             }
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -139,7 +150,8 @@ function UpdateBackbonePageIdentifierData() {
         Identifier: $('#txt_PageIdentifier_edt').val(),
         SerialNo: $('#txt_PageIdentifier_SerialNo_edt').val(),
         Value: $('#txt_PageIdentifier_Value_edt').val(),
-        BackbonePageIdentifierId: $('#label_BackbonePageIdentifierID').html()
+        BackbonePageIdentifierId: $('#label_BackbonePageIdentifierID').html(),
+        UpdateTs: getTodaysDate()
     };
 
     $.ajax({
@@ -149,18 +161,17 @@ function UpdateBackbonePageIdentifierData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
-                alert("Updated successfully...")
-                document.location.reload();
-            }
-            else {
-                alert("Failed to Update...")
-            }
+            alert("Updated successfully...")
+            document.location.reload();
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -179,18 +190,22 @@ function DeletePageIdentifierData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Deleted successfully.")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Delete..")
-            }
+            //}
+            //else {
+            //    alert("Failed to Delete..")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });

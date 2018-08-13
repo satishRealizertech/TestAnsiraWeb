@@ -2,7 +2,13 @@
     getIdentifierData();
     getBackboneId();
 });
-
+function getTodaysDate() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
+}
 var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
 function getIdentifierData() {
     $.ajax({
@@ -54,9 +60,6 @@ function getBackboneId() {
         } //End of AJAX error function  
     });
 }
-
-
-
 function setBackboneEditData(key)
 {
     if (window.BackboneIdentifierList) {
@@ -73,7 +76,6 @@ function setBackboneDelete(id)
 {
     $('#labledeleteBackboneIdentifierId').html(id);
 }
-
 function createBackboneIdentifier()
 {
     var data = {
@@ -82,7 +84,9 @@ function createBackboneIdentifier()
         Identifier: $('#txtIdentifier').val(),
         SerialNo: $('#txtSerialNo').val(),
         Value: $('#txtValue').val(),
-        IsActive:true
+        CreatedBy: '',
+        CreateTs: getTodaysDate(),
+        Comment:''
     };
     $.ajax({
         type: "POST",
@@ -99,9 +103,13 @@ function createBackboneIdentifier()
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage);
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage);
         } //End of AJAX error function  
     });
 }
@@ -113,6 +121,9 @@ function updateBackboneIdentifier() {
         SerialNo: $('#txtedtSerialNo').val(),
         Value: $('#txtedtValue').val(),
         IsActive: true,
+        UpdatedBy: '',
+        UpdateTs: getTodaysDate,
+        Comment:'',
         BackboneIdentifierId: $('#lableBackboneIdentifierId').html()
     };
     $.ajax({
@@ -122,17 +133,18 @@ function updateBackboneIdentifier() {
         dataType: "json",
         data: JSON.stringify(data),
         success: function (data) {
-            if (data) {
                 alert('Successfully Update');
                 document.location.reload();
-            }
-            else { alert('Error while updating'); }
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage);
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage);
         } //End of AJAX error function  
     });
 }
@@ -148,11 +160,8 @@ function deleteBackboneIdentifier()
         dataType: "json",
         data: JSON.stringify(data),
         success: function (data) {
-            if (data) {
                 alert('Successfully Delete');
                 document.location.reload();
-            }
-            else { alert('Error while deleting'); }
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");

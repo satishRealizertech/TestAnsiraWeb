@@ -94,7 +94,9 @@ function CreateBackbonePageElementIdentifier() {
         Type: $('#txt_Type_Name').val(),
         Identifier: $('#txt_Identifier').val(),
         SerialNo: $('#txt_SerialNo').val(),
-        Value: $('#txt_Value').val()
+        Value: $('#txt_Value').val(),
+        CreateTs: getCurrentDateTime()
+        
     };
     $.ajax({
         type: "POST",
@@ -112,9 +114,13 @@ function CreateBackbonePageElementIdentifier() {
             }
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -140,7 +146,8 @@ function UpdateBackbonePageElementIdentifier() {
         Identifier: $('#txt_Identifier_Edt').val(),
         SerialNo: $('#txt_SerialNo_Edt').val(),
         Value: $('#txt_Value_Edt').val(),
-        BackbonePageElementIdentifierId: $('#label_BackbonePageElementIdentifierID').html()
+        BackbonePageElementIdentifierId: $('#label_BackbonePageElementIdentifierID').html(),
+        UpdateTs:getCurrentDateTime()
     };
 
     $.ajax({
@@ -150,18 +157,22 @@ function UpdateBackbonePageElementIdentifier() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Updated successfully...")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Update...")
-            }
+            //}
+            //else {
+            //    alert("Failed to Update...")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -179,19 +190,31 @@ function DeletePageElementIdentifier() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Deleted successfully.")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Delete..")
-            }
+            //}
+            //else {
+            //    alert("Failed to Delete..")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
+}
+function getCurrentDateTime()
+{
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
 }

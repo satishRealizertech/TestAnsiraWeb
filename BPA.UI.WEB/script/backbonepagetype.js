@@ -18,7 +18,7 @@ function getbackbonePageType() {
             $.each(arr, function (i, item) {
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" onclick=setPageTypeEdit(' + item.BackbonePageId + ',' + item.PageId + ',"' + item.BackboneId + '") data-title="Edit"  data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
                 var deletebtn = '<button class="btn btn-danger" data-title="Delete" onclick=setPageTypeDelete(' + item.BackbonePageId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>';
-                $('#backbonePageTypeDataTable').dataTable().fnAddData([item.BackboneName,item.PageName, editbtn, deletebtn]);
+                $('#backbonePageTypeDataTable').dataTable().fnAddData([item.BackboneName,item.PageType, editbtn, deletebtn]);
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
@@ -104,17 +104,18 @@ function createPageType()
         dataType: "json",
         data: JSON.stringify(data),
         success: function (data) {
-            if (data) {
                 alert('Successfully Enter');
                 document.location.reload();
-            }
-            else { alert('Error while inserting'); }
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage)
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
+            var res = JSON.parse(data.responseText);
+            alert(res.ExceptionMessage)
         } //End of AJAX error function  
     });
 }
@@ -123,7 +124,8 @@ function UpdatePageType()
     var data = {
         PageId:$('#selectPageTypeedit').val(),
         BackboneId: $('#selectBackboneIdedit').val(),
-        BackbonePageId: $('#lblBackbonePageId').html()
+        BackbonePageId: $('#lblBackbonePageId').html(),
+        IsActive: true
     };
     $.ajax({
         type: "POST",
@@ -132,17 +134,18 @@ function UpdatePageType()
         dataType: "json",
         data: JSON.stringify(data),
         success: function (data) {
-            if (data) {
                 alert('Successfully Update');
                 document.location.reload();
-            }
-            else { alert('Error while updating'); }
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");
+            var res = JSON.parse(data);
+            alert(res.ErrorMessage)
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
+            var res = JSON.parse(data);
+            alert(res.ErrorMessage)
         } //End of AJAX error function  
     });
 }
@@ -158,17 +161,18 @@ function DeletePageType()
         dataType: "json",
         data: JSON.stringify(data),
         success: function (data) {
-            if (data) {
                 alert('Successfully Delete');
                 document.location.reload();
-            }
-            else { alert('Error while deleting'); }
         }, //End of AJAX Success function 
         failure: function (data) {
             //alert("Failure");
+            var res = JSON.parse(data);
+            alert(res.ErrorMessage)
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
+            var res = JSON.parse(data);
+            alert(res.ErrorMessage)
         } //End of AJAX error function  
     });
 }

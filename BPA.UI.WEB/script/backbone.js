@@ -2,7 +2,14 @@
     getBackboneData();
 });
 
-var BaseUrl = 'http://45.35.4.250/AnsiraTestAPI/api/';
+function getTodaysDate() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
+}
+var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
 function getBackboneData() {
     $.ajax({
         type: "GET",
@@ -37,7 +44,7 @@ function getBackboneData() {
 }
 
 function CreateBackboneData() {
-    var reqdata = { BackboneName: $('#txt_Backbone_Name').val() };
+    var reqdata = { BackboneName: $('#txt_Backbone_Name').val(), CreatedBy: '', CreateTs: getTodaysDate() };
     $.ajax({
         type: "POST",
         url: BaseUrl + "Backbone/CreateBackboneData",
@@ -56,13 +63,11 @@ function CreateBackboneData() {
         failure: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            $('#Backbonedatatable').dataTable().fnClearTable();
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            $('#Backbonedatatable').dataTable().fnClearTable();
             //alert("Error");
         } //End of AJAX error function   
     });
@@ -80,7 +85,10 @@ function setBackboneDataDelete(id) {
 function UpdateBackboneData() {
     var reqdata = {
         BackboneName: $('#txt_Backbone_Name_Update').val(),
-        BackboneId: $('#label_BackboneID').html()
+        BackboneId: $('#label_BackboneID').html(),
+        UpdatedBy: '',
+        UpdateTs: getTodaysDate(),
+        IsActive:true
     };
 
     $.ajax({
@@ -90,24 +98,17 @@ function UpdateBackboneData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
                 alert("Updated successfully...")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Update...")
-            }
         }, //End of AJAX Success function 
         failure: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            $('#Backbonedatatable').dataTable().fnClearTable();
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            $('#Backbonedatatable').dataTable().fnClearTable();
             //alert("Error");
         } //End of AJAX error function 
     });

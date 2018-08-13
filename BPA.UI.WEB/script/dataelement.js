@@ -2,7 +2,13 @@
     getDataElementData();
 });
 
-
+function getTodaysDate() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
+}
 var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
 function getDataElementData() {
     $.ajax({
@@ -32,7 +38,10 @@ function getDataElementData() {
 }
 
 function CreateDataElementData() {
-    var reqdata = { DataElementName: $('#txt_DataElement_Name').val() };
+    var reqdata = {
+        DataElementName: $('#txt_DataElement_Name').val(),
+        CreateTs: getTodaysDate()
+    };
     $.ajax({
         type: "POST",
         url: BaseUrl + "DataElement/CreateDataElementData",
@@ -40,18 +49,22 @@ function CreateDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Inserted successfully.")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to insert..")
-            }
+            //}
+            //else {
+            //    alert("Failed to insert..")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -69,7 +82,8 @@ function setDataElementDataDelete(id) {
 function UpdateDataElementData() {
  var reqdata = {
         DataElementName: $('#txt_DataElement_Name_Update').val(),
-        DataElementTypeId: $('#label_DataElementID').html()
+        DataElementTypeId: $('#label_DataElementID').html(),
+        UpdateTs: getTodaysDate()
     };
 
     $.ajax({
@@ -79,18 +93,22 @@ function UpdateDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Updated successfully...")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Update...")
-            }
+            //}
+            //else {
+            //    alert("Failed to Update...")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -106,18 +124,22 @@ function DeleteDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            //if (data) {
                 alert("Deleted successfully.")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Delete..")
-            }
+            //}
+            //else {
+            //    alert("Failed to Delete..")
+            //}
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });

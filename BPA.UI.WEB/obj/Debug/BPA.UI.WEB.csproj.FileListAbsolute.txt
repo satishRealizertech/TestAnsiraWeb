@@ -31,3 +31,36 @@ E:\Vitthal\BPA.UI.WEB\BPA.UI.WEB\bin\System.Web.Mvc.xml
 E:\Vitthal\BPA.UI.WEB\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.csprojResolveAssemblyReference.cache
 E:\Vitthal\BPA.UI.WEB\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.dll
 E:\Vitthal\BPA.UI.WEB\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.pdb
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\csc.exe
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\System.Collections.Immutable.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\System.Reflection.Metadata.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\vbc.exe
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\VBCSCompiler.exe
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\roslyn\VBCSCompiler.exe.config
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\BPA.UI.WEB.dll.config
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\BPA.UI.WEB.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\BPA.UI.WEB.pdb
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\Microsoft.Web.Infrastructure.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Helpers.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Mvc.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Razor.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.Deployment.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.Razor.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Razor.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.Deployment.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Webpages.Razor.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Helpers.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\bin\System.Web.Mvc.xml
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.csprojResolveAssemblyReference.cache
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.dll
+D:\Satish .net\Ansira\TestAnsiraWeb\BPA.UI.WEB\obj\Debug\BPA.UI.WEB.pdb

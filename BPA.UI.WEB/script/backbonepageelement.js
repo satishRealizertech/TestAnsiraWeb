@@ -5,7 +5,13 @@
     getDataElementData();
     getBackbonePageData();
 });
-
+function getTodaysDate() {
+    var currentDate = new Date();
+    var day = currentDate.getDate();
+    var month = currentDate.getMonth() + 1;
+    var year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;
+}
 var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
 function getDataElementData() {
     $.ajax({
@@ -110,10 +116,9 @@ function setBackbonePageElementDataDelete(id) {
 
 function CreateBackbonePageElementData() {
     var reqdata = {
-        //DealerName: $('#txt_Dealer_Name').val(),
-        //DealerUrl: $('#txt_Dealer_Url').val(),
         BackbonePageId: $('#dropdownBackbonePageList').val(),
-        DataElementTypeId: $('#dropdownDataElementList').val()
+        DataElementTypeId: $('#dropdownDataElementList').val(),
+        CreateTs: getTodaysDate()
     };
     $.ajax({
         type: "POST",
@@ -131,9 +136,13 @@ function CreateBackbonePageElementData() {
             }
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -143,11 +152,10 @@ function CreateBackbonePageElementData() {
 
 function UpdateBackbonePageElementData() {
     var reqdata = {
-        //DealerName: $('#txt_OEM_Name_Update').val(),
-        //DealerUrl: $('#txt_Dealer_Url_Update').val(),
         BackbonePageId: $('#dropdownBackbonePageListedt').val(),
         DataElementTypeId: $('#dropdownDataElementListedt').val(),
-        BackbonePageElementId: $('#label_BackbonePageElementID').html()
+        BackbonePageElementId: $('#label_BackbonePageElementID').html(),
+        UpdateTs: getTodaysDate()
     };
 
     $.ajax({
@@ -157,18 +165,20 @@ function UpdateBackbonePageElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+            
                 alert("Updated successfully...")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Update...")
-            }
+            
+           
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
@@ -185,18 +195,19 @@ function DeleteBackbonePageElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            if (data) {
+           
                 alert("Deleted successfully.")
                 document.location.reload();
-            }
-            else {
-                alert("Failed to Delete..")
-            }
+           
         }, //End of AJAX Success function 
         failure: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
+            var error = JSON.parse(data.responseText);
+            alert(error.ExceptionMessage);
             //alert("Error");
         } //End of AJAX error function  
     });
