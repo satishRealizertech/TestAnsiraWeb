@@ -11,7 +11,7 @@ function getTodaysDate() {
     var year = currentDate.getFullYear();
     return month + '/' + day + '/' + year;
 }
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getDataElementData() {
     $.ajax({
         type: "GET",
@@ -20,9 +20,9 @@ function getDataElementData() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data.BackboneList;
-            $.each(arr, function (i, item) {
+            var arrayDataElement = [];
+            arrayDataElement = data.BackboneList;
+            $.each(arrayDataElement, function (i, item) {
                 var options = "<option value=" + item.BackboneId + ">" + item.BackboneName + "</option>";
                 $('#dropdownBackboneIdList').append(options);
                 $('#dropdownBackboneIdListEdt').append(options);
@@ -44,9 +44,9 @@ function getBackbonePageData() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data;
-            $.each(arr, function (i, item) {
+            var arrayBackbonePage = [];
+            arrayBackbonePage = data;
+            $.each(arrayBackbonePage, function (i, item) {
                 var options = "<option value=" + item.PageId + ">" + item.PageType + "</option>";
                 $('#dropdownBackbonePageIdList').append(options);
                 $('#dropdownBackbonePageIdListEdt').append(options);
@@ -71,10 +71,10 @@ function getPageIdentifierData() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data.BackbonePageIdentifierList;
-            window.PageIdentifier = arr;
-            $.each(arr, function (i, item) {
+            var arrayPageIdentifier = [];
+            arrayPageIdentifier = data.BackbonePageIdentifierList;
+            window.PageIdentifier = arrayPageIdentifier;
+            $.each(arrayPageIdentifier, function (i, item) {
                 //var row = "<tr><td>" + item.OEM_Id + "</td><td>" + item.OEM_Name + "</td></tr>"
                 //$('#OEMData tbody').append(row);
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" data-title="Edit" onclick=setPageIdentifierData(' + i + ') data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></button></p>';

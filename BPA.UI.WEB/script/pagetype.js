@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     getPageType();
 });
-var BaseURL = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseURL = $('#baseURL').html();
 function getPageType() {
     $.ajax({
         type: "GET",
@@ -10,9 +10,9 @@ function getPageType() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data;
-            $.each(arr, function (i, item) {
+            var arrPageType = [];
+            arrPageType = data;
+            $.each(arrPageType, function (i, item) {
                 var editBtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" onclick=\"setPageTypeEdit(' + item.PageId + ',\'' + item.PageType + '\')\" data-title="Edit"  data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
                 var deleteBtn = '<button class="btn btn-danger" data-title="Delete" onclick=setPageTypeDelete(' + item.PageId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>';
                 var activeBtn ='';

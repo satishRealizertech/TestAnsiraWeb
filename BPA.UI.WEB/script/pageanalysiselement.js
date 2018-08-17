@@ -2,54 +2,8 @@
     //getPageType();
     //getDealerData();
 });
-var BaseURL = 'http://localhost:50772/api/';
-//function getPageType() {
-//    $.ajax({
-//        type: "GET",
-//        url: BaseURL + "PageAnalysis/GetPageTypesList",
-//        contentType: "application/json;",
-//        dataType: "json",
-//        success: function (data) {
-//            // alert(data);
-//            var arr = [];
-//            arr = data;
-//            $.each(arr, function (i, item) {
-//                var option = '<option value=' + item.PageId + '>' + item.PageName + '</option>';
-//                $('#selectPageType').append(option);
-//            }); //End of foreach Loop   
-//        }, //End of AJAX Success function 
-//        failure: function (data) {
-//            //alert("Failure");
-//        }, //End of AJAX failure function  
-//        error: function (data) {
-//            //alert("Error");
-//        } //End of AJAX error function  
-//    });
-//}
-//function getDealerData() {
-//    $.ajax({
-//        type: "GET",
-//        url: BaseURL + "PageAnalysis/GetAllDealersList",
-//        contentType: "application/json;",
-//        dataType: "json",
-//        success: function (data) {
-//            // alert(data);
-//            var arr = [];
-//            arr = data;
-//            window.dealerData = arr;
-//            $.each(arr, function (i, item) {
-//                var option = '<option value=' + i + '>' + item.DealerName + '</option>';
-//                $('#selectDealer').append(option);
-//            }); //End of foreach Loop   
-//        }, //End of AJAX Success function 
-//        failure: function (data) {
-//            //alert("Failure");
-//        }, //End of AJAX failure function  
-//        error: function (data) {
-//            //alert("Error");
-//        } //End of AJAX error function  
-//    });
-//}
+var BaseURL = $('#baseURL').html();
+
 
 function getPageAnalysisData()
 {
@@ -74,10 +28,10 @@ function getPageAnalysisData()
             data: JSON.stringify(data),
             success: function (data) {
                 // alert(data);
-                var arr = [];
-                arr = data.PageElementResults;
+                var arrPageAnalysis = [];
+                arrPageAnalysis = data.PageElementResults;
                 $('#backbonePageTypeDataTable').dataTable().fnClearTable();
-                $.each(arr, function (i, item) {
+                $.each(arrPageAnalysis, function (i, item) {
                     $('#backbonePageTypeDataTable').dataTable().fnAddData([item.DataElementName, item.Value]);
                 }); //End of foreach Loop  
                 $("#backbonePageTypeDataTable").loading('stop');

@@ -9,7 +9,7 @@ function getTodaysDate() {
     var year = currentDate.getFullYear();
     return month + '/' + day + '/' + year;
 }
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getDataElementData() {
     $.ajax({
         type: "GET",
@@ -18,9 +18,9 @@ function getDataElementData() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data.DataElementList;
-            $.each(arr, function (i, item) {
+            var arrDataElement = [];
+            arrDataElement = data.DataElementList;
+            $.each(arrDataElement, function (i, item) {
                 //var row = "<tr><td>" + item.OEM_Id + "</td><td>" + item.OEM_Name + "</td></tr>"
                 //$('#OEMData tbody').append(row);
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" data-title="Edit" onclick=setDataElementData(' + item.DataElementTypeId + ',"' + item.DataElementName + '") data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></button></p>';
@@ -49,13 +49,9 @@ function CreateDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            //if (data) {
                 alert("Inserted successfully.")
                 document.location.reload();
-            //}
-            //else {
-            //    alert("Failed to insert..")
-            //}
+            
         }, //End of AJAX Success function 
         failure: function (data) {
             var error = JSON.parse(data.responseText);
@@ -93,13 +89,10 @@ function UpdateDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            //if (data) {
+           
                 alert("Updated successfully...")
                 document.location.reload();
-            //}
-            //else {
-            //    alert("Failed to Update...")
-            //}
+           
         }, //End of AJAX Success function 
         failure: function (data) {
             var error = JSON.parse(data.responseText);
@@ -124,13 +117,10 @@ function DeleteDataElementData() {
         dataType: "json",
         data: JSON.stringify(reqdata),
         success: function (data) {
-            //if (data) {
+           
                 alert("Deleted successfully.")
                 document.location.reload();
-            //}
-            //else {
-            //    alert("Failed to Delete..")
-            //}
+           
         }, //End of AJAX Success function 
         failure: function (data) {
             var error = JSON.parse(data.responseText);

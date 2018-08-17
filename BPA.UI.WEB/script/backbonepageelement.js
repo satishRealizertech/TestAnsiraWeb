@@ -12,7 +12,7 @@ function getTodaysDate() {
     var year = currentDate.getFullYear();
     return month + '/' + day + '/' + year;
 }
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getDataElementData() {
     $.ajax({
         type: "GET",
@@ -45,7 +45,6 @@ function getBackboneData() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
             var arr = [];
             arr = data.DataElementList;
             $.each(arr, function (i, item) {
@@ -55,10 +54,8 @@ function getBackboneData() {
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
         } //End of AJAX error function  
     });
 }

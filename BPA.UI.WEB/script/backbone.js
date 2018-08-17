@@ -9,7 +9,7 @@ function getTodaysDate() {
     var year = currentDate.getFullYear();
     return month + '/' + day + '/' + year;
 }
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getBackboneData() {
     $.ajax({
         type: "GET",
@@ -17,12 +17,9 @@ function getBackboneData() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data.BackboneList;
-            $.each(arr, function (i, item) {
-                //var row = "<tr><td>" + item.OEM_Id + "</td><td>" + item.OEM_Name + "</td></tr>"
-                //$('#OEMData tbody').append(row);
+            var backboneArry = [];
+            backboneArry = data.BackboneList;
+            $.each(backboneArry, function (i, item) {
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" data-title="Edit" onclick=setBackboneData(' + item.BackboneId + ',"' + item.BackboneName + '") data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></button></p>';
                 var deletebtn = '<button class="btn btn-danger" data-title="Delete" onclick=setBackboneDataDelete(' + item.BackboneId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></button>';
                 $('#Backbonedatatable').dataTable().fnAddData([item.BackboneName, editbtn, deletebtn]);
@@ -104,12 +101,10 @@ function UpdateBackboneData() {
         failure: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
-            //alert("Error");
         } //End of AJAX error function 
     });
 }
@@ -136,13 +131,11 @@ function DeleteBackboneData() {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
             $('#Backbonedatatable').dataTable().fnClearTable();
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
             var res = JSON.parse(data.responseText);
             alert(res.Message + '\n' + res.ExceptionMessage);
             $('#Backbonedatatable').dataTable().fnClearTable();
-            //alert("Error");
         } //End of AJAX error function  
     });
 }

@@ -4,7 +4,7 @@
     getBackboneId();
 });
 
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getbackbonePageType() {
     $.ajax({
         type: "GET",
@@ -13,9 +13,9 @@ function getbackbonePageType() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data;
-            $.each(arr, function (i, item) {
+            var arrayBackbonePageType = [];
+            arrayBackbonePageType = data;
+            $.each(arrayBackbonePageType, function (i, item) {
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" onclick=setPageTypeEdit(' + item.BackbonePageId + ',' + item.PageId + ',"' + item.BackboneId + '") data-title="Edit"  data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
                 var deletebtn = '<button class="btn btn-danger" data-title="Delete" onclick=setPageTypeDelete(' + item.BackbonePageId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>';
                 $('#backbonePageTypeDataTable').dataTable().fnAddData([item.BackboneName,item.PageType, editbtn, deletebtn]);
@@ -38,9 +38,9 @@ function getPageType() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data;
-            $.each(arr, function (i, item) {
+            var arrPageType = [];
+            arrPageType = data;
+            $.each(arrPageType, function (i, item) {
                 var option = '<option value='+item.PageId+'>'+item.PageType+'</option>';
                 $('#selectPageType').append(option);
                 $('#selectPageTypeedit').append(option);
@@ -63,10 +63,10 @@ function getBackboneId() {
         dataType: "json",
         success: function (data) {
             // alert(data);
-            var arr = [];
-            arr = data.BackboneList;
-            window.BackboneIdentifierList = arr;
-            $.each(arr, function (i, item) {
+            var arrBackboneId = [];
+            arrBackboneId = data.BackboneList;
+            window.BackboneIdentifierList = arrBackboneId;
+            $.each(arrBackboneId, function (i, item) {
                 var option = '<option value=' + item.BackboneId + '>' + item.BackboneName + '</option>';
                 $('#selectBackboneId').append(option);
                 $('#selectBackboneIdedit').append(option);

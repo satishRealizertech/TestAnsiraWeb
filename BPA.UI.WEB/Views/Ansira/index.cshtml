@@ -54,6 +54,7 @@
             </div>
         </nav>
         <div class="container">
+            <label id="baseURL" hidden>@System.Configuration.ConfigurationManager.AppSettings["BaseURL"]</label>
             @RenderBody()
         </div>
     </div>

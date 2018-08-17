@@ -9,7 +9,7 @@ function getTodaysDate() {
     var year = currentDate.getFullYear();
     return month + '/' + day + '/' + year;
 }
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getIdentifierData() {
     $.ajax({
         type: "GET",
@@ -17,11 +17,10 @@ function getIdentifierData() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data;
-            window.BackboneIdentifierList = arr;
-            $.each(arr, function (i, item) {
+            var backboneIdentifierArray = [];
+            backboneIdentifierArray = data;
+            window.BackboneIdentifierList = backboneIdentifierArray;
+            $.each(backboneIdentifierArray, function (i, item) {
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" onclick=setBackboneEditData('+i+') data-title="Edit"  data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
                 var deletebtn = '<button class="btn btn-danger" data-title="Delete" onclick=setBackboneDelete(' + item.BackboneIdentifierId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>';
                 $('#BackboneIdentifierDataTable').dataTable().fnAddData([ item.BackboneName,item.Type,item.Identifier,item.SerialNo,item.Value, editbtn, deletebtn]);
@@ -42,21 +41,18 @@ function getBackboneId() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data.BackboneList;
-            window.BackboneIdentifierList = arr;
-            $.each(arr, function (i, item) {
+            var backboneArray = [];
+            backboneArray = data.BackboneList;
+            window.BackboneIdentifierList = backboneArray;
+            $.each(backboneArray, function (i, item) {
                 var option = '<option value=' + item.BackboneId + '>' + item.BackboneName + '</option>';
                 $('#selectBackboneId').append(option);
                 $('#selectedtBackboneId').append(option);
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
         } //End of AJAX error function  
     });
 }
@@ -137,12 +133,10 @@ function updateBackboneIdentifier() {
                 document.location.reload();
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
             var res = JSON.parse(data.responseText);
             alert(res.ExceptionMessage);
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
             var res = JSON.parse(data.responseText);
             alert(res.ExceptionMessage);
         } //End of AJAX error function  
@@ -164,10 +158,8 @@ function deleteBackboneIdentifier()
                 document.location.reload();
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
         } //End of AJAX error function  
     });
 }

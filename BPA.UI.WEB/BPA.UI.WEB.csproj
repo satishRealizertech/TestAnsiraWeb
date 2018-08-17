@@ -114,8 +114,6 @@
     <Compile Include="Controllers\BackbonePageElementIdentifierController.cs" />
     <Compile Include="Controllers\BackbonePageIdentifierController.cs" />
     <Compile Include="Controllers\DataElementController.cs" />
-    <Compile Include="Controllers\DEALERController.cs" />
-    <Compile Include="Controllers\OEMController.cs" />
     <Compile Include="Controllers\PageTypeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

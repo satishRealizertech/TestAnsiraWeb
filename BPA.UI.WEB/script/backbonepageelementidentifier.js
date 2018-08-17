@@ -5,7 +5,7 @@
     getDataElementData();
 });
 
-var BaseUrl = 'http://45.35.4.250/ansiratestapi/api/';
+var BaseUrl = $('#baseURL').html();
 function getPageElementData() {
     $.ajax({
         type: "GET",
@@ -13,17 +13,15 @@ function getPageElementData() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data;
-            $.each(arr, function (i, item) {
+            var arraytPageElementData = [];
+            arraytPageElementData = data;
+            $.each(arraytPageElementData, function (i, item) {
                 var options = "<option value=" + item.PageId + ">" + item.PageType + "</option>";
                 $('#dropdownBackbonePageElementId').append(options);
                 $('#dropdownBackbonePageElementIdEdt').append(options);
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
             //alert("Error");
@@ -38,20 +36,17 @@ function getDataElementData() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data.DataElementList;
-            $.each(arr, function (i, item) {
+            var arrayDataElement = [];
+            arrayDataElement = data.DataElementList;
+            $.each(arrayDataElement, function (i, item) {
                 var options = "<option value=" + item.DataElementTypeId +">" + item.DataElementName + "</option>";
                 $('#dropdownBackbonePageId').append(options);
                 $('#dropdownBackbonePageIdEdt').append(options);
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
         } //End of AJAX error function  
     });
 }
@@ -65,11 +60,10 @@ function getBackbonePageElementIdentifier() {
         contentType: "application/json;",
         dataType: "json",
         success: function (data) {
-            // alert(data);
-            var arr = [];
-            arr = data.BackbonePageElementIdentifierList;
-            window.PageIdentifier = arr;
-            $.each(arr, function (i, item) {
+            var arrayBackbonePageElementIdentifier = [];
+            arrayBackbonePageElementIdentifier = data.BackbonePageElementIdentifierList;
+            window.PageIdentifier = arrayBackbonePageElementIdentifier;
+            $.each(arrayBackbonePageElementIdentifier, function (i, item) {
                 //var row = "<tr><td>" + item.OEM_Id + "</td><td>" + item.OEM_Name + "</td></tr>"
                 //$('#OEMData tbody').append(row);
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" data-title="Edit" onclick=setPageIdentifierData(' + i + ') data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></button></p>';
@@ -78,10 +72,9 @@ function getBackbonePageElementIdentifier() {
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {
-            //alert("Failure");
         }, //End of AJAX failure function  
         error: function (data) {
-            //alert("Error");
+
         } //End of AJAX error function  
     });
 }
