@@ -101,9 +101,7 @@
     <Content Include="script\backbonepageidentifier.js" />
     <Content Include="script\backbonepagetype.js" />
     <Content Include="script\dataelement.js" />
-    <Content Include="script\dealer.js" />
     <Content Include="script\loading.js" />
-    <Content Include="script\oem.js" />
     <Content Include="script\pageanalysiselement.js" />
     <Content Include="script\pagetype.js" />
     <Content Include="Web.config" />
@@ -127,13 +125,11 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\OEM\Index.cshtml" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="Views\Dealer\Index.cshtml" />
     <Content Include="Views\Backbone\Index.cshtml" />
     <Content Include="Views\DataElement\Index.cshtml" />
     <Content Include="Views\BackbonePageElement\Index.cshtml" />

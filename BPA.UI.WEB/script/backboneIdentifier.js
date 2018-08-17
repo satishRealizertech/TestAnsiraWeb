@@ -24,7 +24,7 @@ function getIdentifierData() {
             $.each(arr, function (i, item) {
                 var editbtn = '<p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary" onclick=setBackboneEditData('+i+') data-title="Edit"  data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p>';
                 var deletebtn = '<button class="btn btn-danger" data-title="Delete" onclick=setBackboneDelete(' + item.BackboneIdentifierId + ') data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>';
-                $('#BackboneIdentifierDataTable').dataTable().fnAddData([ item.BackboneName,item.Type,item.Identifier,item.SerialNo, editbtn, deletebtn]);
+                $('#BackboneIdentifierDataTable').dataTable().fnAddData([ item.BackboneName,item.Type,item.Identifier,item.SerialNo,item.Value, editbtn, deletebtn]);
             }); //End of foreach Loop   
         }, //End of AJAX Success function 
         failure: function (data) {

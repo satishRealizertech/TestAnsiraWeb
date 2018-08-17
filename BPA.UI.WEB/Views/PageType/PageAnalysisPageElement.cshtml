@@ -10,21 +10,44 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-12">
-            <div class="col-sm-4 col-md-4 form-group">
-                <select id="selectDealer" class="form-control">
-                    <option value="">Select Dealer</option>
-                </select>
+        <form id="formPageAnalysisData">
+            <div class="col-sm-12 col-md-12">
+                <div class="form-group">
+                    <label for="email">Request Id:</label>
+                    <input type="number" placeholder="Request Id" class="form-control" name="request Id" id="txtRequestId" value="" required/>
+                </div>
+
+                <div>
+                    <div class="col-md-6 col-md-6 form-group">
+                        <label for="email">Dealer Id:</label>
+                        <input type="number" placeholder="Dealer Id" class="form-control" name="dealer Id" id="txtDealerId" value="" required />
+                    </div>
+                    <div class="col-md-6 col-md-6 form-group">
+                        <label for="email">Dealer Name:</label>
+                        <input type="text" placeholder="Dealer Name" class="form-control" name="dealer Name" id="txtDealerName" value="" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">OEM Id:</label>
+                    <input type="number" placeholder="Oem Id" class="form-control" name="oem Id" id="txtOEMId" value="" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">OEM Name:</label>
+                    <input type="text" placeholder="OEM Name" class="form-control" name="oem Name" id="txtOEMName" value="" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">URL:</label>
+                    <input type="url" name="url" placeholder="Url" class="form-control" id="txtUrl" value="" required/>
+                </div>
+
+                <div class="col-sm-4 col-md-4">
+                    <input type="button" onclick="getPageAnalysisData()" class="btn btn-primary" value="View" />
+                </div>
             </div>
-            <div class="col-sm-4 col-md-4 form-group">
-                <select id="selectPageType" class="form-control">
-                    <option value="">Select PageType</option>
-                </select>
-            </div>
-            <div class="col-sm-4 col-md-4">
-                <input type="button" onclick="getPageAnalysisData()" class="btn btn-primary" value="View" />
-            </div>
-        </div>
+        </form>
     </div>
     <hr />
     <div class="row">

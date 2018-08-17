@@ -38,6 +38,32 @@ function getDataElementData() {
     });
 }
 
+function getBackboneData() {
+    $.ajax({
+        type: "GET",
+        url: BaseUrl + "DataElement/GetDataElementData",
+        contentType: "application/json;",
+        dataType: "json",
+        success: function (data) {
+            // alert(data);
+            var arr = [];
+            arr = data.DataElementList;
+            $.each(arr, function (i, item) {
+                var options = "<option value=" + item.DataElementTypeId + ">" + item.DataElementName + "</option>";
+                $('#dropdownBackboneList').append(options);
+                $('#dropdownBackboneListedit').append(options);
+            }); //End of foreach Loop   
+        }, //End of AJAX Success function 
+        failure: function (data) {
+            //alert("Failure");
+        }, //End of AJAX failure function  
+        error: function (data) {
+            //alert("Error");
+        } //End of AJAX error function  
+    });
+}
+
+
 
 function getBackbonePageElementData() {
     $.ajax({
@@ -67,7 +93,6 @@ function getBackbonePageElementData() {
     });
 }
 
-
 function getBackboneElementTypeData() {
     $.ajax({
         type: "GET",
@@ -93,10 +118,6 @@ function getBackboneElementTypeData() {
         } //End of AJAX error function  
     });
 }
-
-
-//Display List
-
 
 //Create Function
 function setBackbonePageElementData(key) {
